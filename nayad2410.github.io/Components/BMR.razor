@@ -1,0 +1,43 @@
+﻿<h3>BMR</h3>
+
+<div class="mb-3">
+    <label class="form-label">Weight (kg)</label>
+    <InputNumber @bind-Value="@weight" class="form-control" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Height (cm)</label>
+    <InputNumber @bind-Value="@height" class="form-control" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Age (years)</label>
+    <InputNumber @bind-Value="@age" class="form-control" />
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Gender</label>
+    <select @bind="isMale" class="form-select">
+        <option value="true">Male</option>
+        <option value="false">Female</option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <button class="btn btn-primary" @onclick="CalculateBMR">Calculate BMR</button>
+</div>
+
+<div class="mb-3">
+    <strong>Your BMR: </strong> @bmr
+</div>
+
+@code {
+    double weight, height, age, bmr;
+    bool isMale;
+
+    void CalculateBMR()
+    {
+        double s = isMale ? 5 : -161;
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + s;
+    }
+}
