@@ -1,7 +1,37 @@
 ﻿@page "/services"
 
-<h3>Services</h3>
+@inject NavigationManager NavigationManager
+
+<PageTitle>Services - Be Healthier with Nabaa</PageTitle>
+
+<div class="container mt-5">
+    <h2><i class="fas fa-concierge-bell"></i> Our Services</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <i class="fas fa-utensils"></i> <strong>Personalized Nutrition Plans:</strong> Meal plans designed for your health goals and preferences.
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-weight"></i> <strong>Weight Loss Programs:</strong> Safe and effective weight loss programs combining balanced nutrition and exercise.
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-dumbbell"></i> <strong>Muscle Building Programs:</strong> Nutrition plans to support muscle growth and recovery.
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-heartbeat"></i> <strong>Health and Wellness Coaching:</strong> One-on-one coaching sessions to guide you toward your wellness goals.
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-building"></i> <strong>Corporate Wellness Programs:</strong> Wellness workshops and programs tailored for businesses to promote employee health.
+        </li>
+    </ul>
+
+    <button class="btn btn-primary mt-3" @onclick="NavigateToHome">
+        <i class="fas fa-home"></i> Go Home
+    </button>
+</div>
 
 @code {
-
+    private void NavigateToHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }

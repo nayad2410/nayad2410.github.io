@@ -1,11 +1,36 @@
 ﻿@page "/portfolio"
 
-<h3>Portfolio</h3>
-<a href="/BMR"> BMR page</a>
+@inject NavigationManager NavigationManager
 
+<PageTitle>Portfolio - Be Healthier with Nabaa</PageTitle>
 
+<div class="container mt-5">
+    <h2><i class="fas fa-trophy"></i> Success Stories</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <i class="fas fa-user-check"></i> <strong>John’s Journey:</strong> John lost 30 pounds in 6 months through our customized weight loss program, significantly improving his overall health.
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-user-alt"></i> <strong>Sarah’s Success:</strong> Sarah gained 10 pounds of lean muscle through our muscle-building program in just 3 months.
+        </li>
+        <li class="list-group-item">
+            <i class="fas fa-building"></i> <strong>Corporate Wellness at ABC Inc.:</strong> Our corporate wellness program helped improve employee health and increased productivity by 20%.
+        </li>
+    </ul>
 
+    <h3 class="mt-5"><i class="fas fa-calculator"></i> Basal Metabolic Calculator</h3>
+    <p>Check out our <a href="/BMR" class="link-primary">Basal Metabolic Calculator</a> to calculate your daily calorie needs.</p>
+
+    <button class="btn btn-primary mt-3" @onclick="NavigateToHome">
+        <i class="fas fa-home"></i> Go Home
+    </button>
+</div>
 
 @code {
-
+    private void NavigateToHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }
+
+

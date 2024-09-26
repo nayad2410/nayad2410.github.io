@@ -1,8 +1,27 @@
 ﻿@page "/about"
 
-<PageTitle>About</PageTitle>
-<h3>About</h3>
+@inject NavigationManager NavigationManager
+
+<PageTitle>About - Be Healthier with Nabaa</PageTitle>
+
+<div class="container mt-5">
+    <h2><i class="fas fa-info-circle"></i> About Be Healthier with Nabaa</h2>
+    <p>Be Healthier with Nabaa was founded with a mission to empower individuals to make healthier lifestyle choices. We combine expert nutrition knowledge with modern technology to create personalized programs that fit your lifestyle and goals.</p>
+
+    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+    <p>To offer personalized, science-based nutrition solutions that help people establish lifelong healthy habits.</p>
+
+    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+    <p>To be a leader in health and nutrition, transforming lives by providing accessible and affordable wellness programs for everyone.</p>
+
+    <button class="btn btn-primary" @onclick="NavigateToHome">
+        <i class="fas fa-home"></i> Go Home
+    </button>
+</div>
 
 @code {
-
+    private void NavigateToHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
 }
